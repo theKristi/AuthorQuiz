@@ -76,12 +76,15 @@ function onAnswerSelected(answer) {
     state.highlight= isCorrect? 'correct':'wrong';
     render();
 }
+function AuthorWrpper(){
+    return <AddAuthorForm onAddAuthor={console.log}/>;
+}
 function render(){
     ReactDOM.render(
     <BrowserRouter>
         <React.Fragment>
             <Route exact path="/" component={App}/>
-            <Route path="/add" component={AddAuthorForm}/>
+            <Route path="/add" component={AuthorWrpper}/>
         </React.Fragment>
     </BrowserRouter>, document.getElementById('root'));
 }
